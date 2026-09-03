@@ -1847,3 +1847,177 @@ footer {
     }
 
 }
+/* =====================================================
+   DARK / LIGHT THEME TOGGLE
+   ===================================================== */
+
+#theme-toggle {
+    display: none;
+}
+
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    position: relative;
+
+    margin-left: 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    background: var(--surface);
+
+    color: var(--accent);
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.08);
+    border-color: var(--accent);
+}
+
+/* Icons */
+
+.theme-toggle i {
+    position: absolute;
+    transition: 0.3s ease;
+}
+
+.theme-toggle .fa-sun {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0);
+}
+
+.theme-toggle .fa-moon {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+
+/* =====================================================
+   LIGHT / BRIGHT THEME
+   ===================================================== */
+
+body:has(#theme-toggle:checked) {
+
+    --background: #f5f7fa;
+    --surface: #ffffff;
+    --surface-light: #eef2f6;
+
+    --border: rgba(15, 23, 42, 0.12);
+
+    --text: #101828;
+    --muted: #667085;
+
+    --accent: #0097a7;
+    --accent-dark: #007c8a;
+
+    background: var(--background);
+    color: var(--text);
+}
+
+
+/* Header */
+
+body:has(#theme-toggle:checked) .header {
+    background: rgba(245, 247, 250, 0.85);
+}
+
+
+/* Navigation */
+
+body:has(#theme-toggle:checked) .nav-links a:hover {
+    color: #101828;
+}
+
+
+/* Hero */
+
+body:has(#theme-toggle:checked) .hero-bg {
+    opacity: 0.12;
+}
+
+
+/* Cards */
+
+body:has(#theme-toggle:checked) .stat-card,
+body:has(#theme-toggle:checked) .skill-card,
+body:has(#theme-toggle:checked) .project-card,
+body:has(#theme-toggle:checked) .timeline-content {
+    background: #ffffff;
+}
+
+
+/* Floating cards */
+
+body:has(#theme-toggle:checked) .floating-card {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 15px 40px rgba(15, 23, 42, 0.12);
+}
+
+
+/* Outline button */
+
+body:has(#theme-toggle:checked) .btn-outline {
+    color: #101828;
+}
+
+
+/* About lead text */
+
+body:has(#theme-toggle:checked) .about-main .lead {
+    color: #101828;
+}
+
+
+/* Contact form */
+
+body:has(#theme-toggle:checked) .contact-form input,
+body:has(#theme-toggle:checked) .contact-form textarea {
+    color: #101828;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+
+/* Skill bars */
+
+body:has(#theme-toggle:checked) .skill-bar {
+    background: #dfe4ea;
+}
+
+
+/* Sun/Moon animation */
+
+body:has(#theme-toggle:checked) .theme-toggle .fa-sun {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+}
+
+body:has(#theme-toggle:checked) .theme-toggle .fa-moon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0);
+}
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 700px) {
+
+    .theme-toggle {
+        margin-left: auto;
+        margin-right: 15px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+}
